@@ -12,10 +12,7 @@ import { fileURLToPath } from "url"
 
 // B. ARCHIVOS
 import userRoute from "./routes/users.js"
-import carRoute from "./routes/cars.js"
-import pizzaRoute from "./routes/pizzas.js"
 import consultaRoute from "./routes/consultas.js"
-import toppingsRoute from "./routes/toppings.js"
 import checkoutRoute from "./routes/checkout.js"
 import connectDB from "./config/db.js"
 
@@ -58,10 +55,7 @@ app.use((req, res, next) => {
 // PROD: https://midominio.com/
 // DEV: localhost:3005/
 app.use("/api/v1/users", userRoute)
-app.use("/api/v1/cars", carRoute)
-app.use("/api/v1/pizzas", pizzaRoute)
 app.use("/api/v1/consultas", consultaRoute)
-app.use("/api/v1/toppings", toppingsRoute)
 app.use("/api/v1/checkout", checkoutRoute)
 
 // B. DOCUMENTACIÓN

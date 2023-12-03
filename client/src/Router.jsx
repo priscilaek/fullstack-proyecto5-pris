@@ -2,9 +2,11 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Layout from "./components/Layout"
-import PizzasPage from "./pages/pizzas"
-import PizzaState from "./context/Pizza/PizzaState"
-import PizzaPage from "./pages/pizzas/pizza"
+
+import ConsultasPage from "./pages/consultas"
+import ConsultaState from "./context/Consulta/ConsultaState"
+import ConsultaPage from "./pages/consultas/consulta"
+
 import Login from "./pages/iniciar-sesion"
 import SignUp from "./pages/registro"
 import UserState from "./context/User/UserState"
@@ -19,7 +21,7 @@ function Router() {
   return (
     <>
       <UserState>
-        <PizzaState>
+        <ConsultaState>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Layout />}>
@@ -39,17 +41,17 @@ function Router() {
                 />
                 <Route path="/carrito" element={<Private component={Cart} />} />
                 <Route
-                  path="/pizzas"
-                  element={<Public component={PizzasPage} />}
+                  path="/consultas"
+                  element={<Public component={ConsultasPage} />}
                 />
                 <Route
-                  path="/pizzas/:slug"
-                  element={<Public component={PizzaPage} />}
+                  path="/consultas/:slug"
+                  element={<Public component={ConsultaPage} />}
                 />
               </Route>
             </Routes>
           </BrowserRouter>
-        </PizzaState>
+          </ConsultaState>
       </UserState>
     </>
   )

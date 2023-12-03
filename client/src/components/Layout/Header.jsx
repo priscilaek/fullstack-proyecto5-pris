@@ -26,33 +26,32 @@ function Header() {
   }, [currentUser])
 
   return (
-    <div>
-      <ul>
-        <li>
+    <div className="p-4 md:p-8">
+      <ul className="flex flex-wrap justify-center md:justify-start">
+        <li className="m-2">
           <Link to="/">Inicio</Link>
         </li>
-
+  
         {authStatus ? (
           <>
-            <p>
+            <p className="text-center md:text-right">
               Te damos la bienvenida, {user.name} {user.lastname}
             </p>
-            <button onClick={logoutUser}>
+            <button onClick={logoutUser} className="m-2">
               <Link to="/">Cerrar sesión</Link>
             </button>
-            <p style={{ textDecoration: "underline" }}>
-              <Link to="/carrito">
-                <Cart style={{ marginRight: "8px" }} /> Tu carrito de compras:{" "}
-                <span>3 pizzas</span>
+            <p className="text-center md:text-left underline">
+              <Link to="/carrito" className="flex items-center">
+                <Cart className="mr-2" /> Tu carrito de compras: <span> Consultas seleccionadas</span>
               </Link>
             </p>
           </>
         ) : (
           <>
-            <li>
+            <li className="m-2">
               <Link to="/registro">Registro</Link>
             </li>
-            <li>
+            <li className="m-2">
               <Link to="/iniciar-sesion">Iniciar sesión</Link>
             </li>
           </>

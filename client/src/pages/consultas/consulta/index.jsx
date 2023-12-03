@@ -1,15 +1,17 @@
-// ./src/pages/pizzas/pizza/index.jsx
+// ./src/pages/consultas/consulta/index.jsx
+//Este componente utiliza el contexto de UserContext y ConsultaContext para obtener y mostrar la información de una consulta individual, 
+//y realiza la solicitud para obtener la consulta del servidor cuando se monta.
 
 import { useEffect } from "react"
 import { Link, useParams } from "react-router-dom"
 
 import { useContext } from "react"
-import PizzaContext from "../../../context/Pizza/PizzaContext"
+import ConsultaContext from "../../../context/Consulta/ConsultaContext"
 import priceFormatter from "../../../lib/priceFormatter"
 
 import UserContext from "../../../context/User/UserContext"
 
-function PizzaPage() {
+function ConsultaPage() {
   const userCtx = useContext(UserContext)
 
   const { authStatus } = userCtx
@@ -18,14 +20,14 @@ function PizzaPage() {
   console.log(params)
   const { slug } = params
 
-  const pizzaCtx = useContext(PizzaContext)
-  const { pizza, getPizza } = pizzaCtx
-  console.log(pizza)
+  const consultaCtx = useContext(ConsultaContext)
+  const { consulta, getConsulta } = consultaCtx
+  console.log(consulta)
 
-  const { _id, idStripe, name, currency, prices, img, description } = pizza
+  const { _id, idStripe, name, currency, prices, img, description } = consulta
 
   useEffect(() => {
-    getPizza(slug)
+    getConsulta(slug)
   }, [])
 
   const quantityOptions = [0, 1, 2, 3, 4, 5]
@@ -86,4 +88,4 @@ function PizzaPage() {
   )
 }
 
-export default PizzaPage
+export default ConsultaPage

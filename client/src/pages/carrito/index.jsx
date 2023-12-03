@@ -2,10 +2,10 @@ export default function Cart() {
   return (
     <div>
       <div>
-        Tu carrito de compras:
-        <p>Pizza 1</p>
-        <p>Pizza 2</p>
-        <p>Pizza 3</p>
+        Tu carrito de compras tiene los siguientes productos:
+        <p>Consulta 1</p>
+        <p>Consulta 2</p>
+        <p>Consulta 3</p>
       </div>
 
       <div>
