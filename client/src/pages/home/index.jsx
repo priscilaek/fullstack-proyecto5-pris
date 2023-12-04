@@ -14,27 +14,27 @@ function Home() {
       <h3>Ponemos a tu alcance conocimiento y recomendaciones</h3>
 
       <div className="flex justify-around">
-  <div className="benefits2" style={{ margin: '0 1px' }}>
-      <img className="imagen1" src="./img/producto1.jpg" alt="Producto 1" />
-      <h4 className="font-bold">Productos</h4>
-      <p>Alimentos y productos neuroprotectores</p>
-  </div>
-  <div className="benefits2" style={{ margin: '0 1px' }}>
-      <img className="imagen1" src="./img/producto2.jpg" alt="Producto 2" />
-      <h4 className="font-bold">Servicios</h4>
-      <p>Consultas y terapias neuroprotectoras y neurorestauradoras</p>
-      <ul className="list-none mt-4">
-      <li className="mb-2 text-center">
-        <Link className="text-blue-500 hover:text-blue-700" to="/consultas">Ir a las consultas disponibles</Link>
-      </li>
-    </ul>
-  </div>
-  <div className="benefits2" style={{ margin: '0 1px' }}>
-      <img className="imagen1" src="./img/producto3.jpg" alt="Producto 3" />
-      <h4 className="font-bold">Investigación</h4>
-      <p>Estudios de protección cerebral</p>
-  </div>
-</div>
+      <div className="benefits2" style={{ margin: '0 1px' }}>
+          <img className="imagen1" src="https://res.cloudinary.com/dnjkhel2d/image/upload/v1701659286/producto1_gnmqjp.png" alt="Producto 1" />
+          <h4 className="font-bold">Productos</h4>
+          <p>Alimentos y productos neuroprotectores</p>
+      </div>
+      <div className="benefits2" style={{ margin: '0 1px' }}>
+          <img className="imagen1" src="https://res.cloudinary.com/dnjkhel2d/image/upload/v1701659290/producto2_eaprvq.png" alt="Producto 2" />
+          <h4 className="font-bold">Servicios</h4>
+          <p>Consultas y terapias neuroprotectoras y neurorestauradoras</p>
+          <ul className="list-none mt-4">
+          <li className="mb-2 text-center">
+            <Link className="text-blue-500 hover:text-blue-700" to="/consultas">Ir a las consultas disponibles</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="benefits2" style={{ margin: '0 1px' }}>
+          <img className="imagen1" src="https://res.cloudinary.com/dnjkhel2d/image/upload/v1701659290/producto3_i79uhp.png" alt="Producto 3" />
+          <h4 className="font-bold">Investigación</h4>
+          <p>Estudios de protección cerebral</p>
+      </div>
+    </div>
 
     </div>
   )
