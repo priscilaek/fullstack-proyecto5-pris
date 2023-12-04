@@ -1,4 +1,23 @@
-# Documentación del Proyecto
+# Proyecto 5: E-commerce Neuroprotección  ✒️
+Este proyecto se realiza como parte del bootcamp de full stack.
+
+# Planeación 📄
+Prototipo simple
+![Planeación de proyecto](./docs/prototipo.png)
+
+## Version 📌
+
+0.1 
+
+## Author  ⚙️
+
+* **Priscila Elías** 
+
+## Licence 📄
+
+Open source.
+
+## Documentación del Proyecto 📄
 
 Este proyecto es una aplicación web de servicios. Se divide en dos partes principales: el servidor y el cliente.
 

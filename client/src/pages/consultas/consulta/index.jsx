@@ -50,7 +50,7 @@ function ConsultaPage() {
                 return (
                   <>
                     <li>
-                      <h2>Tipo de precio por tamaño: {size}</h2>
+                      <h2>Tiempo: {size}</h2>
                       <p>
                         Precio: {priceFormatter(price)} {currency}{" "}
                       </p>
