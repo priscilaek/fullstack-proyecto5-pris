@@ -5,12 +5,23 @@ import bcryptjs from "bcryptjs"
 import jwt from "jsonwebtoken"
 import Cart from "./../models/Cart.js"
 
-const readAll = (req, res) => {
+/*const readAll = (req, res) => {
   res.json({
     message: "Datos obtenidos con éxito.",
     data: data,
   })
 }
+*/
+
+const readAll = async (req, res) => {
+  let data; // Define data here
+  try {
+    data = await User.find(); // Assume User is your Mongoose model
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 const create = async (req, res) => {
   const { name, lastname, country, address, zipcode, email, password } =
