@@ -1,7 +1,8 @@
 // ./src/context/Consulta/ConsultaState
 
 import { useReducer } from "react"
-import axios from "axios"
+//import axios from "axios"
+import axiosClient from "../../config/axios"
 
 import ConsultaContext from "./ConsultaContext"
 import ConsultaReducer from "./ConsultaReducer"
@@ -29,7 +30,7 @@ const ConsultaState = (props) => {
 
   // A. OBTENER TODAS LAS CONSULTAS
   const getConsultas = async () => {
-    const res = await axios.get("http://localhost:3005/api/v1/consultas/")
+    const res = await axiosClient.get("/api/v1/consultas/")
     console.log(res)
     const { data } = res
     const { data: dataConsultas } = data
@@ -44,8 +45,8 @@ const ConsultaState = (props) => {
 
   // B. OBTENER UNA SOLA CONSULTA
   const getConsulta = async (slug) => {
-    const res = await axios.get(
-      `http://localhost:3005/api/v1/consultas/readone/${slug}`
+    const res = await axiosClient.get(
+      `/api/v1/consultas/readone/${slug}`
     )
 
     console.log(res)
