@@ -4,6 +4,8 @@ import UserContext from "../../context/User/UserContext"
 import { useContext, useEffect, useState } from "react"
 import { Cart } from "react-bootstrap-icons"
 import { Helmet } from "react-helmet"
+//import { Dialog } from '@headlessui/react'
+//import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 function Header() {
   const [user, setUser] = useState({
