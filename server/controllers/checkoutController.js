@@ -179,8 +179,27 @@ const editCart = async (req, res) => {
   }
 }
 
+const getCart = async (req, res) => {
+  const userId = req.user.id
+  try {
+    const foundUser = await User.findOne({ _id: userId })
+    const foundCart = await Cart.findOne({ _id: foundUser.cart })
+    return res.status(200).json({
+      msg: "Carrito encontrado con éxito",
+      cart: foundCart,
+    })
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({
+      msg: "Hubo un error en el servidor",
+      error,
+    })
+  }
+}
+
 export default {
   createOrder,
   createCheckoutSession,
   editCart,
+  getCart,
 }

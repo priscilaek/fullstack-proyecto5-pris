@@ -19,7 +19,9 @@ const UserState = (props) => {
       receipts: [],
       zipCode: 0,
     },
+    cart: [],
     authStatus: false,
+    sessionURL: null,
   }
 
   // 2. REDUCERS
@@ -97,10 +99,72 @@ const UserState = (props) => {
   }
 
   // E. EDITAR CARRITO DE COMPRA
+  const editCart = async (data) => {
+    console.log(data)
+
+    // 1. NECESITO LEER EL TOKEN DEL USUARIO QUE ESTÁ EN LOCAL STORAGE
+    getToken()
+
+    try {
+      // 2. EDITAR CARRITO
+      // EJEMPLO
+      /**
+       * {
+             "products": [
+              {
+                "priceID": "price_1OBJJVCl7xMuNYvu8LEDXhcf",
+                "quantity": 3
+              },
+              ...
+            ] 
+          }
+       */
+
+      const res = await axiosClient.put("/api/v1/checkout/edit-cart", {
+        products: data,
+      })
+
+      console.log(res)
+      await getCart()
+    } catch (error) {
+      console.log(error)
+      return
+    }
+  }
 
   // F. OBTENER CARRITO DE COMPRA
+  const getCart = async () => {
+    getToken()
+
+    try {
+      const res = await axiosClient.get("/api/v1/checkout/get-cart")
+      console.log(res)
+
+      dispatch({
+        type: "GET_CART",
+        payload: res.data.cart.products,
+      })
+    } catch (error) {
+      console.log(error)
+      return
+    }
+  }
 
   // G. CREAR SESIÓN DE STRIPE
+  const getCheckoutSession = async () => {
+    getToken()
+
+    const res = await axiosClient.get(
+      "/api/v1/checkout/create-checkout-session"
+    )
+
+    console.log(res)
+
+    dispatch({
+      type: "GET_CHECKOUT_SESSION",
+      payload: res.data.session_url,
+    })
+  }
 
   // H. EDITAR PERFIL
 
@@ -111,10 +175,15 @@ const UserState = (props) => {
       value={{
         currentUser: globalState.currentUser,
         authStatus: globalState.authStatus,
+        cart: globalState.cart,
+        sessionURL: globalState.sessionURL,
         registerUser,
         verifyingToken,
         logoutUser,
         loginUser,
+        editCart,
+        getCart,
+        getCheckoutSession,
       }}
     >
       {props.children}

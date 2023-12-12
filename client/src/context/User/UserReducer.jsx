@@ -29,9 +29,22 @@ const UserReducer = (globalState, action) => {
         currentUser: action.payload,
       }
 
+    case "GET_CART":
+      return {
+        ...globalState,
+        cart: action.payload,
+      }
+
+    case "GET_CHECKOUT_SESSION":
+      return {
+        ...globalState,
+        sessionURL: action.payload,
+      }
+
     default:
       return globalState
   }
 }
 
 export default UserReducer
+
