@@ -1,8 +1,33 @@
 // ./src/pages/home/index.jsx
 
 import { Link } from "react-router-dom"
+import { useQuery } from "../../hooks/useQuery"
+import { useContext, useEffect } from "react"
+
+import toast from "react-hot-toast"
+import UserContext from "../../context/User/UserContext"
+
+function notify(message) {
+  toast(message)
+}
 
 function Home() {
+  const { editCart } = useContext(UserContext)
+
+  const query = useQuery()
+  console.log(query)
+
+  const status = query.get("status")
+  console.log(status)
+
+  useEffect(() => {
+    console.log(status)
+    if (status === "successful") {
+      notify("Pago realizado con éxito.")
+      editCart([])
+    }
+  }, [])
+  
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
       <h1 className="text-2xl md:text-4xl text-gray-700 my-4 text-center">

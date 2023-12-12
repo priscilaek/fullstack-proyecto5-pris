@@ -42,8 +42,8 @@ const createCheckoutSession = async (req, res) => {
     const session = await stripeKey.checkout.sessions.create({
       line_items,
       mode: "payment",
-      success_url: "https://google.com",
-      cancel_url: "https://yahoo.com",
+      success_url: `${process.env.FRONTEND_URL}/?status=successful`,
+      cancel_url: `${process.env.FRONTEND_URL}/carrito?status=unsuccessful`,
       customer_email: foundUser.email,
     })
     console.log("session", session)
