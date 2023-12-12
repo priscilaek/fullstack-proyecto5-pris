@@ -35,7 +35,7 @@ function Router() {
                   path="/perfil"
                   element={
                     <>
-                      <p>Está página es mi perfil de usuario</p>
+                      <p>Esta página es mi perfil de usuario</p>
                     </>
                   }
                 />

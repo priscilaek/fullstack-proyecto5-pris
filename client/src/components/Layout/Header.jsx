@@ -82,7 +82,7 @@ function Header() {
         )}
         <div className="flex">
           <li className="m-2">
-            <Link to="/">Inicio</Link>
+            <Link to="/">Home</Link>
           </li>
           {authStatus ? (
             <>
