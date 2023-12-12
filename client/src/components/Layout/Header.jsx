@@ -4,11 +4,19 @@ import UserContext from "../../context/User/UserContext"
 import { useContext, useEffect, useState } from "react"
 import { Cart } from "react-bootstrap-icons"
 import { Helmet } from "react-helmet"
+import NavBar from "../Header/NavBar"
+
 //import { Dialog } from '@headlessui/react'
 //import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 function Header() {
+  const data = [
+    { name: "Inicio", href: "#" },
+    { name: "Sobre nosotros", href: "#" },
+  ]
+
   const [total, setTotal] = useState(0)
+
   const [user, setUser] = useState({
     name: "",
     lastname: "",
@@ -54,6 +62,13 @@ function Header() {
   }, [cart])
 
   return (
+    <>
+      <NavBar
+        userAvatarUrl={
+          "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+        }
+        totalItemsCart={total}
+      />
     <div className="p-4 md:p-8">
       <Helmet>
         <title>Neuroprotección - Protegemos el desarrollo</title>
@@ -95,6 +110,7 @@ function Header() {
         </p>
       </ul>
     </div>
+    </>
   )
 }
 
