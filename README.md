@@ -3,6 +3,7 @@ Este proyecto se realiza como parte del bootcamp de full stack.
 
 # Planeación 📄
 Prototipo simple
+
 ![Planeacion de proyecto](client/docs/prototipo.jpg)
 
 ## Version 📌

@@ -1,4 +1,5 @@
-export default function NavBar({ userAvatarUrl, totalItemsCart }) {
+import { Link } from "react-router-dom";
+export default function NavBar({ userAvatarUrl, totalItemsCart, linkCart }) {
     return (
       <div className="navbar bg-base-100">
         <div className="flex-1">
@@ -32,10 +33,10 @@ export default function NavBar({ userAvatarUrl, totalItemsCart }) {
               className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
             >
               <div className="card-body">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
+                <span className="font-bold text-lg">{totalItemsCart} Items</span>
+                {/* <span className="text-info">Subtotal: $999</span> */}
                 <div className="card-actions">
-                  <button className="btn btn-primary btn-block">View cart</button>
+                  <button className="btn btn-primary btn-block"> <Link to={linkCart}>Ver carrito</Link></button>
                 </div>
               </div>
             </div>

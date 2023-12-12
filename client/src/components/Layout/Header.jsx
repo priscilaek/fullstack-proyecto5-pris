@@ -68,6 +68,7 @@ function Header() {
           "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
         }
         totalItemsCart={total}
+        linkCart={"/carrito"}
       />
     <div className="p-4 md:p-8">
       <Helmet>

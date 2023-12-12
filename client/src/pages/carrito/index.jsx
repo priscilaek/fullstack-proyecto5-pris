@@ -26,7 +26,7 @@ export default function Cart() {
             return (
               <li key={e._id}>
                 <h3>
-                  <Link to={`/pizzas/${e.slug}`}>{e.name}</Link>
+                  <Link to={`/consultas/${e.slug}`}>{e.name}</Link>
                 </h3>
 
                 <p>{e.size}</p>
